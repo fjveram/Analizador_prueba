@@ -76,11 +76,6 @@ def analizar_red(ip, mascara, gateway):
         red = interfaz.network
 
         print()
-        print("========================================")
-        print("          NETWORK ANALYZER")
-        print("========================================")
-
-        print()
         print("CONFIGURACIÓN ACTUAL")
         print("----------------------------------------")
         print(f"IP local:        {interfaz.ip}")
@@ -101,8 +96,16 @@ def analizar_red(ip, mascara, gateway):
         else:
             print(f"Número de hosts: {red.num_addresses}")
 
+        return {
+            "ip": interfaz.ip,
+            "mascara": red.netmask,
+            "gateway": gateway,
+            "red": red
+        }
+
     except ValueError:
         print("La configuración IPv4 detectada no es válida.")
+        return None
 
 
 def main():
@@ -124,4 +127,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
