@@ -45,6 +45,7 @@ def hacer_ping(ip):
 def escanear_red(red):
     
     dispositivos = []
+    print(f"Escaneando red: {red}")
 
     for ip in red.hosts():
 
