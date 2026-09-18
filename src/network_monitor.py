@@ -65,7 +65,7 @@ def mostrar_dispositivos(dispositivos):
     print()
 
     if not dispositivos:
-        print("No se encontraron dispositivos.")
+        print("No se encontro dispositivos.")
         return
 
     for dispositivo in dispositivos:
